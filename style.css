@@ -1,0 +1,687 @@
+/* Custom Fonts */
+@font-face {
+  /* Light */
+  font-family: "BMW";
+  src: url("https://db.onlinewebfonts.com/t/e9de4f4d373ef5c6d9cf52490816ff5d.eot");
+  src: url("https://db.onlinewebfonts.com/t/e9de4f4d373ef5c6d9cf52490816ff5d.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/e9de4f4d373ef5c6d9cf52490816ff5d.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/e9de4f4d373ef5c6d9cf52490816ff5d.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/e9de4f4d373ef5c6d9cf52490816ff5d.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/e9de4f4d373ef5c6d9cf52490816ff5d.svg#BMW Type Web Light All")format("svg");
+
+  font-weight: 300;
+}
+ @font-face {
+  /* Bold */ 
+  font-family: "BMW";
+  src: url("https://db.onlinewebfonts.com/t/18ef7d48e5aad7f01745ddab09c29bf7.eot");
+  src: url("https://db.onlinewebfonts.com/t/18ef7d48e5aad7f01745ddab09c29bf7.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/18ef7d48e5aad7f01745ddab09c29bf7.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/18ef7d48e5aad7f01745ddab09c29bf7.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/18ef7d48e5aad7f01745ddab09c29bf7.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/18ef7d48e5aad7f01745ddab09c29bf7.svg#BMW Type Web Bold All")format("svg");
+  
+  font-weight: 700;
+}
+@font-face {
+  /* Regular */
+  font-family: "BMW";
+  src: url("https://db.onlinewebfonts.com/t/ac95f91c55cc591ecf37a4d136ff8031.eot");
+  src: url("https://db.onlinewebfonts.com/t/ac95f91c55cc591ecf37a4d136ff8031.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/ac95f91c55cc591ecf37a4d136ff8031.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/ac95f91c55cc591ecf37a4d136ff8031.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/ac95f91c55cc591ecf37a4d136ff8031.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/ac95f91c55cc591ecf37a4d136ff8031.svg#BMWTypeNext Pro Regular")format("svg");
+
+  font-weight: 400;
+}
+
+
+/* Custom Properties */
+:root {
+  --ff-regular: "BMW";
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-extra-small: 0.625rem;
+  --fs-small: 0.75rem;
+  --fs-regular-small: 0.875rem;
+  --fs-regular: 1rem;
+  --fs-title: 3rem;
+  --fs-second-title: 1.5rem;
+  --fs-third-title: 1.25rem;
+  --fs-extreme: 8rem;
+
+  --clr-light: rgb(255, 255, 255);
+  --clr-light-blue: rgb(28, 105, 212);
+  --clr-light-gray: rgb(246, 246, 246);
+  --clr-dark-blue: rgb(6, 83, 182);
+  --clr-dark-gray: rgb(102, 102, 102);
+  --clr-dark: rgb(38, 38, 38);
+  --clr-dark-extreme: rgb(97, 21, 148);
+  --clr-gray: rgb(77, 77, 77);
+
+  --pdng-section-standard: 5%;
+
+  /*Informations: 
+    font sizes: 10, 12, (14 only in block 2), 16, 20, 24, 48, 128
+ */
+}
+
+/* Reset */
+/*
+  Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    Remove default margin
+  */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+}
+/*
+    Typographic tweaks!
+    Add accessible line-height
+    Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: white;
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: var(--ff-regular);
+}
+/*
+    Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+/*
+    Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Utility Classes */
+.flex-group {
+  display: flex;
+  align-items: center;
+}
+.flex-group-column{
+  flex-direction: column;
+}
+.flex-group-stretch {
+  align-items: stretch;
+}
+
+.centered-item {
+  display: grid;
+  align-items: center;
+  align-content: center;
+}
+#space-between {
+  justify-content: space-between;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Element Styling */
+
+/* General Elements */
+
+.button-blue {
+  background-color: var(--clr-light-blue);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 3.25rem;
+  padding: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.button-blue:hover {
+  background-color: var(--clr-dark-blue);
+}
+
+.button-white {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 3.25rem;
+  padding: 4px;
+  border: 1px solid var(--clr-dark);
+  cursor: pointer; 
+}
+.button-white:hover {
+  border: 2px solid var(--clr-dark);
+}
+
+.button-transparent {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 3.25rem;
+  padding: 4px;
+  border: 1px solid var(--clr-light);
+  background-color: transparent;
+  cursor: pointer; 
+}
+.button-transparent:hover {
+  border: 2px solid var(--clr-light);
+}
+
+/* Link Icon */
+.link-icon::after {
+  content: '↗';
+  font-size: var(--fs-regular);
+  display: inline-block;
+}
+
+/* Info-Text */
+.info-text {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-light);
+  color: var(--clr-dark);
+  padding-inline: var(--pdng-section-standard);
+}
+.info-text i {
+  font-size: var(--fs-regular);
+}
+.info-text-margin-small {
+  margin: 0.75rem 0;
+}
+.info-text-margin-big {
+  margin: 1.25rem 0;
+}
+.info-text-margin-big-small{
+  margin: 1.5rem 0 0.75rem 0;
+}
+.info-text-margin-big-zero{
+  margin-top: 1.5rem;
+}
+.info-text-margin-big-big{
+  margin-top: 1.5rem;
+  margin-bottom: 3.75rem;
+}
+
+.info-text a {
+  color: var(--clr-dark);
+  text-decoration: underline;
+  font-weight: var(--fw-bold);
+}
+
+
+/* Chat Box */
+.chat-box {
+  position: fixed;
+  bottom: 21%;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  color: var(--clr-light);
+}
+.chat-box i {
+  font-size: 2.25rem;
+}
+
+
+/* Header */
+header {
+  position: absolute;
+  width: 99vw;
+  max-width: 100vw;
+  padding-inline: 6rem;
+  color: var(--clr-light);
+  background-color: transparent;
+  font-family: var(--ff-regular);
+  overflow: hidden;
+}
+
+/* Header Link Navigation */
+.header__nav {
+  --nav-height: 5.5rem;
+  --nav-padding: 0 0.75rem;
+  --nav-hover-border: 4px solid var(--clr-light-blue);
+
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bold);
+  border-bottom: 1px solid var(--clr-light);
+}
+
+/* Logo */
+.header__logo {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-right: 1.5rem;
+}
+.logo__item {
+  position: absolute;
+  padding: auto;
+}
+
+/* Navigation Links */
+.header__link-item {
+  height: var(--nav-height);
+  padding: var(--nav-padding);
+  line-height: 24px;
+}
+.header__link-item:hover {
+  border-bottom: 4px solid var(--clr-light-blue); 
+}
+
+/* Icons */
+.header__icons {
+  height: var(--nav-height);
+  margin-left: auto;
+
+  font-size: 1.25rem;
+  font-weight: var(--fw-regular);
+}
+.header__icon {
+  padding: var(--nav-padding);
+}
+.header__icon i {
+  padding-right: 0.25rem;
+}
+.header__icon:hover {
+  border-bottom: var(--nav-hover-border);
+}
+
+
+
+/* Header Title */
+.header__title {
+  padding-top: 1.25rem;
+
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-regular);
+}
+.header__title b{
+  font-weight: var(--fw-bold);
+}
+
+
+
+/* Landing Wrapper (is equal to image section)*/
+.landing__image-wrapper {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: -1000;
+}
+.landing__content {
+  margin: 1.5rem 0 2.5rem 0;
+  letter-spacing: 2px;
+}
+
+
+.landing__subheading-small {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  padding: 0 0.75rem;
+}
+.landing__heading-wrapper {
+  max-height: 7.75rem;
+  padding: 0 0.75rem;
+}
+.landing__heading {
+  font-size: var(--fs-extreme);
+  font-weight: var(--fw-light);
+}
+.landing_subheading {
+  font-size: var(--fs-third-title);
+  font-weight: var(--fw-light);
+  padding: 0 0.75rem;
+  margin: 0.25rem 0 0 0;
+}
+.landing__button-wrapper{
+  margin: 1.25rem 0px 2rem;
+}
+.landing__button-wrapper-2 {
+  padding-inline: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+
+/* BMW-Selection */
+.selection-wrapper {
+  margin-top: 4.5rem;
+}
+.selection-wrapper__subheading {
+  font-size: var(--fs-regular-small);
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark-gray);
+  line-height: 1.25rem;
+  letter-spacing: 2.8px;
+  margin-bottom: 0.75rem;
+}
+.selection-wrapper__heading {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-light);
+  color: var(--clr-dark);
+  line-height: 4rem;
+}
+
+/* .selection, .selection > *, .selection > * > *{
+  border: 1px solid blue;
+} */
+.selection {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-inline: var(--pdng-section-standard);
+  margin: 1.5rem 0;
+}
+.selection-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+}
+.selection-item__icon {
+  max-width: 33%;
+}
+.selection-item__heading {
+  color: var(--clr-dark);
+  font-size: var(--fs-third-title);
+  font-weight: var(--fw-light);
+  line-height: 24px;
+  margin-top: 1.5rem;
+}
+
+.selection-item__button {
+  width: 100%;
+  margin-top: 1.5rem;
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark);
+}
+.selection-item__link {
+  padding: 4px;
+}
+
+/* Image Sections */
+.image-section {
+  --pdng-inline: 0.75rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: auto;
+
+  color: var(--clr-light);
+  font-weight: var(--fw-bold);
+}
+.image-section__background {
+  width: 100%;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: -1000;
+  object-fit: fill;
+}
+.image-section__content-wrapper {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  
+  width: 100%;
+  height: 100%;
+  padding: 0 6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+
+.content-wrapper__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.content-wrapper__title-third {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  line-height: 1rem;
+  letter-spacing: 2px;
+  padding-inline: calc(var(--pdng-inline) / 2);
+}
+.content-wrapper__title-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: var(--fs-second-title);
+  font-weight: var(--fw-regular);
+
+  margin-bottom: 0.75rem;
+}
+.content-wrapper__title-box img {
+  height: 1.5rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+.content-wrapper__text {
+  font-size: 1.5rem;
+  font-weight: var(--fw-light);
+  line-height: 2rem;
+
+  padding-inline: var(--pdng-inline);
+  margin-bottom: 0.75rem;
+}
+.content-wrapper__text b {
+  font-weight: var(--fw-bold);
+}
+
+.content-wrapper__button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.content-wrapper__button {
+  margin-bottom: 3.25rem;
+  width: 20vw;
+  font-size: var(--fs-regular);
+}
+.content-wrapper__button a {
+  width: 100%;
+  padding-inline: var(--pdng-inline);
+}
+
+.content-wrapper__special-info {
+  align-self: flex-end;
+  margin-top: 5rem;
+  margin-right: 2rem;
+}
+
+/* E-Fahrezeuge */
+.section-efahrzeuge {
+  margin-top: 2.25rem;
+}
+
+/* Junge Gebrauchte Fahrzeuge*/
+.section-junge-gebrauchte {
+  margin-bottom: 1.5rem;
+}
+
+
+/* Side-To-Side */
+.side-to-side-section {
+  --left-distance: 0.75rem; 
+  --lh-small: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 3rem 0;
+  padding-inline: var(--pdng-section-standard);
+}
+.side-1 {
+  width: 145%;
+}
+.side-2 {
+  width: 100%;
+  padding-left: 2.5rem;
+}
+.side-2__title {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-light);
+  line-height: 4rem;
+
+  padding-left: var(--left-distance);
+  margin-bottom: 0.5rem;
+}
+.side-2__text {
+  font-size: var(--fs-second-title);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-small);
+
+  padding-left: var(--left-distance);
+}
+.side-2__text-small {
+  font-size: var(--fs-third-title);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-small);
+
+  padding-left: var(--left-distance);
+  margin-top: 0.75rem;
+}
+.side-2__button {
+  width: max-content;
+
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bold);
+  line-height: 1.25rem;
+
+  margin-left: var(--left-distance);
+  padding: 0.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+
+/* Footer */
+.section-modellwahl {
+  padding: 2rem var(--pdng-section-standard);
+  border-top: 3px solid var(--clr-light-gray);
+  border-bottom: 1px solid var(--clr-light-gray);
+}
+.section-modellwahl__text {
+  font-size: var(--fs-extra-small);
+  font-weight: var(--fw-light);
+  letter-spacing: 2px;
+  line-height: 0.75rem;
+  margin-right: 2rem;
+}
+.section-modellwahl__title {
+  font-size: var(--fs-regular-small);
+  font-weight: var(--fw-bold);
+}
+.section-modellwahl__title:hover {
+  color: var(--clr-dark-blue);
+}
+
+/* Footer Nav */
+.footer__nav {
+  background-color: var(--clr-light-gray);
+  padding-inline: var(--pdng-section-standard);
+}
+.footer__side-2-side {
+  color: var(--clr-dark);
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+.footer__side {
+  flex: 1;
+}
+.footer__title {
+  font-size: var(--fs-extra-small);
+  font-weight: var(--fw-light);
+  letter-spacing: 2px;
+  line-height: 0.75rem;
+  margin-bottom: 1rem;
+}
+.footer__item {
+  font-size: var(--fs-regular-small);
+  font-weight: var(--fw-bold);
+  line-height: 1.25rem;
+  margin-bottom: 0.875rem;
+  color: var(--clr-dark);
+}
+.footer__item:hover {
+  color: var(--clr-dark-extreme);
+}
+
+
+/* Socials */
+.footer__socials {
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  color: var(--clr-dark);
+}
+.socials-item {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}
+
+
+/* Gesetzliches */
+.footer__gesetzliches {
+  padding-inline: var(--pdng-section-standard);
+  justify-content: space-between;
+}
+.footer__copyright{
+  font-size: 0.75rem;
+  font-weight: var(--fw-light);
+  line-height: 1rem;
+}
+
+.gesetzliches__nav {
+  color: var(--clr-dark);
+  font-size: var(--fs-regular-small);
+  font-weight: var(--fw-bold);
+}
+.gesetzliches__items {
+  gap: 2rem;
+}
+.gesetzliches__item a:hover {
+  color: var(--clr-light-blue);
+}
+ 
+
+.footer__gesetzliches li {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
